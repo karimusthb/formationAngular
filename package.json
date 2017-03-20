@@ -10,5 +10,9 @@
     "angular"
   ],
   "author": "Jean-Louis GUENEGO",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "3.18.0",
+    "eslint-config-google": "0.7.1"
+  }
 }
