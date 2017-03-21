@@ -18,7 +18,7 @@
 			.when('/service', {
 				templateUrl: 'ors-route/tmpl/service.html'
 			})
-            .when('/contact', {
+			.when('/contact', {
 				templateUrl: 'ors-route/tmpl/contact.html'
 			})
 			.otherwise({
