@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "angular": "1.6.3",
-    "angular-route": "1.6.3"
+    "angular-route": "1.6.3",
+    "express": "4.15.2",
+    "serve-index": "1.8.0"
   }
 }
