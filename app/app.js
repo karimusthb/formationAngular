@@ -1,13 +1,10 @@
 (function() {
 	'use strict';
 
-	var app = angular.module('main', []);
+	var app = angular.module('main', ['ors-route']);
 
-	app.directive('orsHeader', function() {
-		return {
-			restrict: 'E',
-			templateUrl: 'tmpl/ors-header.html'
-		};
+	app.component('orsHeader', {
+		templateUrl: 'tmpl/ors-header.html'
 	});
 
 
