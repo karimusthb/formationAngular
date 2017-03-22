@@ -1,12 +1,12 @@
 (function() {
 	'use strict';
 
-	var app = angular.module('main', ['ors-route']);
+	var app = angular.module('main', ['ors-route', 'ors-star']);
 
 	app.run(['$injector', function($injector) {
 		var $rootScope = $injector.get('$rootScope');
 		var $location = $injector.get('$location');
-		
+
 		$rootScope.isActive = function(url) {
 			var path = $location.path();
 			console.log('path', path);

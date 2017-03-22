@@ -3,27 +3,37 @@
 
 	var app = angular.module('ors-star', []);
 
-	app.directive('orsActive', function() {
-		return {
-			restrict: 'A',
-			controller: ['$scope', '$attrs', '$element', '$location',
-				function($scope, $attrs, $element, $location) {
-					console.log('$attrs', $attrs);
-					var refresh = function(next, current) {
-						var url = $attrs.href;
-						var path = '.' + $location.path();
-						console.log('path', path);
-						if (url === path) {
-							$element.addClass('active');
-						} else {
-							$element.removeClass('active');
-						}
+	app.component('orsStar', {
+		bindings: {
+			n: '=?note',
+		},
+		controller: ['$scope', '$element', '$compile',
+			function($scope, $element, $compile) {
+				console.log('orsStar ctrl', arguments);
+				var ctrl = this;
+				ctrl.update = function(n) {
+					console.log('update', arguments);
+					ctrl.n = n;
+				};
+				$scope.$watch('$ctrl.n', function() {
+					var html = '';
+					var note = 4;
+					note = (ctrl.n === undefined) ? note : Number(ctrl.n);
+					note = (isNaN(note)) ? 0 : note;
+					note = (note > 5) ? 5 : note;
+					note = (note < 0) ? 0 : note;
+					for (let i = 0; i < note; i++) {
+						html += '<img ng-click="$ctrl.update(' + (i + 1) + ')" src="./ors-star/img/yellow_star.png" />';
 					}
-					$scope.$on('$routeChangeStart', refresh);
-					refresh();
-				}
-			]
-		};
+
+					for (let i = note; i < 5; i++) {
+						html += '<img ng-click="$ctrl.update(' + (i + 1) + ')" src="./ors-star/img/white_star.png" />';
+					}
+					$element.html(html);
+					$compile($element.contents())($scope);
+				});
+			}
+		]
 	});
 
 })();

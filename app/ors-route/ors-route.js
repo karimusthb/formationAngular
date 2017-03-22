@@ -13,7 +13,9 @@
 				templateUrl: 'ors-route/tmpl/home.html'
 			})
 			.when('/product', {
-				templateUrl: 'ors-route/tmpl/product.html'
+				templateUrl: 'ors-route/tmpl/product.html',
+				controller: 'ProductCtrl',
+				controllerAs:'$ctrl' 
 			})
 			.when('/service', {
 				templateUrl: 'ors-route/tmpl/service.html'

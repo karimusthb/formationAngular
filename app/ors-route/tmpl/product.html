@@ -1,1 +1,4 @@
-product
+<button ng-click="$ctrl.start()">Start</button><br/>
+<ul>
+    <li ng-repeat="log in $ctrl.logs">{{log.result}}</li>
+</ul>
