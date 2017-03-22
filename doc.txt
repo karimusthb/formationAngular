@@ -32,4 +32,4 @@ services: $http : appel servie web
 		  
 Tools : eslint, webpack, webpack-dev-middleware, Babel
 		ng-annotate injection inline
-	UT : karma with jasmine
+	UT : karma with jasmine, protractor
