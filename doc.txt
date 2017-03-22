@@ -1,0 +1,35 @@
+Repo formation: https://github.com/jlguenego/fan_20170320.git
+https://www.jlg-consulting.com/ali/proto/
+
+etapes chargement angular :
+angular n'a pas été chargé 
+jquery n'a pas été chargé si non jqlite
+publish api externe
+load angular init : cherche ng-app si trouvé charge modules auto + ng
+				  : si module renseigné : charge le module
+				  : apres compilation
+fonction : IIFE
+
+service : Singleton : il est chargé une seule fois
+
+Controller: class instantié à la demande à chaque fois
+
+ng-cloak
+
+
+on peut injecter (dans un controlleur):
+$scope et $rootscope, $element, $attrs, et les services
+
+Voir code source :  
+console.log  .toString()
+
+site : font Awesome, Gandi, es6-features.org
+
+app.config: on ne peut injecter que des provider pas de services
+
+services: $http : appel servie web
+		  $ressource : appel servie web
+		  
+Tools : eslint, webpack, webpack-dev-middleware, Babel
+		ng-annotate injection inline
+	UT : karma with jasmine
